@@ -1,0 +1,20 @@
+<%- include("../partials/html-head") %>
+  <%- include("../partials/nav") %>
+
+    <section>
+      <h1>Edit the Recipe! </h1>
+      <form action="/Recipes/<%= recipe._id %>?_method=PUT" method="POST">
+        <label>
+          Name:
+          <input type="text" name="name" value="<%= recipe.name %>" autocomplete="off">
+        </label>
+        <label>
+          Is this a favorite?
+          <input type="checkbox" name="tasty" <%=recipe.favorite ? "checked" : "" %>
+          >
+        </label>
+        <button type="submit">Edit the recipe</button>
+      </form>
+    </section>
+
+    <%- include("../partials/footer") %>

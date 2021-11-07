@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 
 const recipeSchema = new Schema({
 	name: String,
-	tasty: Boolean,
+	favorite: Boolean,
 	owner: { type: Schema.Types.ObjectId, ref: 'Profile' },
 })
 

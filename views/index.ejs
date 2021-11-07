@@ -12,21 +12,6 @@
     </div>
   <% } %>
 <section>
-  <h1>Recipes: </h1>
-  <%# New Code Below %>
-    <% if (user) { %>
-      <h2>Add a Recipe that you Enjoy</h2>
-      <form action="/recipes" method="POST">
-        <label>
-          Name:
-          <input type="text" name="name" autocomplete="off">
-        </label>
-        <label>
-          Add as Favorite?
-          <input type="checkbox" name="favorite">
-        </label>
-        <button type="submit">Add Recipe</button>
-      </form>
-      <% } %>
+
 
 <%- include('./partials/footer') %>

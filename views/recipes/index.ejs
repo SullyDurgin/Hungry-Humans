@@ -1,0 +1,33 @@
+<%- include("../partials/html-head") %>
+  <%- include("../partials/nav") %>
+
+    <section>
+      <h1>Recipes</h1>
+      <% if (user) { %>
+        <h2>Add a Recipe That You Enjoy</h2>
+        <form action="/recipes" method="POST">
+          <label>
+            Name:
+            <input type="text" name="name" autocomplete="off">
+          </label>
+          <label>
+            favorite?
+            <input type="checkbox" name="favorite">
+          </label>
+          <button type="submit">Add Recipe </button>
+        </form>
+        <% } %>
+          <h2>Recipes</h2>
+          <ul>
+            <% recipes.forEach(recipe=> { %>
+              <li>
+                <a href="/recipes/<%= recipe._id %>">
+                  <%= recipe.name %>
+                </a>
+                is <%= recipe.favorite ? "favorite" : "not favorite" %>
+              </li>
+              <% }) %>
+          </ul>
+    </section>
+
+    <%- include("../partials/footer") %>

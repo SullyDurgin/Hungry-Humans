@@ -1,4 +1,29 @@
 <%- include("../partials/html-head") %>
   <%- include("../partials/nav") %>
 
- 
+    <section>
+      <p>From the kitchen of <%= recipe.owner.name %>
+      </p>
+      <h1>
+        <%= recipe.name %> 🌮
+      </h1>
+      <h2>This recipe is <%= recipe.favorite? "😋" : "😢" %>
+      </h2>
+      <% if (user) {%>
+        <form action="/recipes/<%= recipe._id %>/flip-tasty?_method=PATCH" method="POST">
+          <button class="btn" type="submit">
+            Make recipe <%= recipe.favorite ? "😞" : "😋" %>
+          </button>
+        </form>
+        <% } %>
+          <% if (recipe.owner.equals(user?.profile._id)) { %>
+            <form action="/recipes/<%= recipe._id %>/edit" method="GET">
+              <button class="btn" type="submit">Edit this recipe </button>
+            </form>
+            <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+              <button class="btn" type="submit">Delete this recipe </button>
+            </form>
+            <% } %>
+    </section>
+
+    <%- include("../partials/footer") %>
