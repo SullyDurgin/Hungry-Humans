@@ -61,3 +61,8 @@ a:hover, a:active {
   background-color: rgb(74, 96, 74);
   color: white;
 }
+
+ul {
+  text-align: center;
+  list-style: none;
+}
