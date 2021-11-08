@@ -3,17 +3,26 @@ nav {
   display: flex;
   justify-content: space-evenly;
   font-size: 40px;
-}
-
-body {
-text-align: center;
   background-color: #eaeaea;
 }
 
-.container{
+body {
+  background-color: rgb(19, 88, 82);
+  font-family: monospace;
+  text-align: center;
+  margin: 20px;
+  min-height: 100vh;
+  
+}
+
+#flex-container{
   display: flex;
   align-items: center;
   padding: 20px;
+}
+
+h1 {
+  font-size: 35px;
 }
 
 #welcome{
@@ -43,6 +52,13 @@ text-align: center;
   transform: translate(0, -50%);
 }
 
+#reviews {
+ font-size: 25px;
+ display: flex;
+ justify-content: center;
+ flex-direction: column;
+}
+
 p{
   margin: 0;
 }
@@ -55,6 +71,7 @@ a:link, a:visited {
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  font-size: 20px;
 }
 
 a:hover, a:active {
@@ -63,6 +80,14 @@ a:hover, a:active {
 }
 
 ul {
+  margin: 20px;
   text-align: center;
   list-style: none;
+  font-size: 20px;
+}
+
+#add-review-form{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
 }

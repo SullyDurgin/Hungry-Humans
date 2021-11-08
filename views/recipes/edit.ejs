@@ -4,13 +4,26 @@
     <section>
       <h1>Edit: <%= recipe.name %> </h1>
       <form action="/Recipes/<%= recipe._id %>?_method=PUT" method="POST">
+        <section>
+          <h2>
+            <%= recipe.name %>
+          </h2>
+          <ul>
+            <li>
+              <%= recipe.ingredients %>
+            </li>
+            <li>
+              <%= recipe.instructions %>
+            </li>
+          </ul>
+        </section>
           <label>
             Name: 
-            <input type="text" name="name" value=<%= recipe.name %> ></input>
+            <input type="text" name="name" placeholder=<%= recipe.name %> ></input>
           </label>
           <label>
             Ingredients: 
-            <textarea type="text" name="ingredients" placeholder=<%= recipe.ingredients %> ></textarea>
+            <textarea type="text" name="ingredients" placeholder=<%= recipe.ingredients %> "></textarea>
           </label>
           <label>
             Instructions:

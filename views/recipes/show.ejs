@@ -21,13 +21,15 @@
     <%= recipe.name %>
   </h2>
   <ul>
+    <h1>Ingredients:</h1>
     <li><%= recipe.ingredients %></li>
+    <h1>Instructions:</h1>
     <li><%= recipe.instructions %></li>
   </ul>
 </section>
 
 
-
+<wrapper id="reviews">
           <form id="add-review-form" action="/recipes/<%= recipe._id %>/reviews" method="POST">
           <label>
             <label for="content-textarea">Review:</label>
@@ -80,6 +82,7 @@
           <% } else { %>
             <h3>No Reviews Yet</h3>
             <% } %>
+           
     </section>
-
+</wrapper>
     <%- include("../partials/footer") %>
