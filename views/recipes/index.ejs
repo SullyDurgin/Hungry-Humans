@@ -3,6 +3,9 @@
 
     <section>
       <h1>Recipes: </h1>
+        <form action="/recipes/random" method="GET">
+          <button class="btn" type="submit">Random Recipe</button>
+        </form>
       <% if (user) { %>
         <h2>Add a Recipe That You Enjoy </h2>
         <form action="/recipes" method="POST">
