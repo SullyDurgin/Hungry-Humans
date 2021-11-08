@@ -12,9 +12,26 @@
               <button class="btn" type="submit">Delete this recipe </button>
             </form>
             <% } %>
+            <main>
+              <h1>
+                <%= title %>
+              </h1>
+              <section>
+                <div>Name: </div>
+                <div>
+                  <%= recipe.title %>
+                    <a href="/recipes/<%= recipe._id %>/edit">Edit recipe</a>
+                </div>
+              
+                <div>Author: </div>
+                <div>
+                  <%= recipe.profile %>
+                </div>
+               
+              </section>
       
                       <h2>Add a review!</h2>
-                      <form action="/profiles/<%= recipe._id %>/reviews" method="POST">
+                      <form action="<%= recipe._id %>/reviews" method="POST">
                         <label for="content-textarea">Review:</label>
                         <textarea name="content" id="content-textarea"></textarea>
                         <label for="rating-select">Rating:</label>
@@ -29,23 +46,43 @@
                       </form>
                   
                         <% if (recipe.reviews.length) { %>
-                       
-                          <% recipe.reviews.forEach(review=> { %>
-                            <h3>
-                        
-                                <form action="/profiles/reviews/<%= review._id %>?_method=DELETE" method="POST"
-                                  style="display: inline-block;">
-                                  <button type="submit">Delete Review<%= review.name %></button>
-                                </form>
-                              
-                            </h3>
-                            <% }) %>
-                              <% } else { %>
-                                <h2>
-                                  <%=`${recipe.name} doesn't` %> have any reviews.
-                                </h2>
-                                <% } %>
-            
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Date</th>
+                                <th>Review</th>
+                                <th>Rating</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <% let total=0 %>
+                                <% recipe.reviews.forEach(function(review){ %>
+                                  <% total +=review.rating %>
+                                    <tr>
+                                      <td>
+                                        <%= review.createdAt.toLocaleDateString() %>
+                                      </td>
+                                      <td>
+                                        <%= review.content %>
+                                      </td>
+                                      <td>
+                                        <%= review.rating %>
+                                      </td>
+                                    </tr>
+                                    <% }) %>
+                                      <tr>
+                                        <td colspan="2"></td>
+                                        <td>
+                                          <strong>
+                                            <%= averageReviewScore %>
+                                          </strong>
+                                        </td>
+                                      </tr>
+                            </tbody>
+                          </table>
+                          <% } else { %>
+                            <h3>No Reviews Yet</h3>
+                            <% } %>
     </section>
 
     <%- include("../partials/footer") %>

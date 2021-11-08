@@ -22,4 +22,6 @@ router.put('/:id', isLoggedIn, recipesCtrl.update)
 // localhost:3000/recipes/:id - DELETE
 router.delete('/:id', isLoggedIn, recipesCtrl.delete)
 
+router.post('/recipes/:id/reviews', isLoggedIn, recipesCtrl.createReview)
+
 export { router }

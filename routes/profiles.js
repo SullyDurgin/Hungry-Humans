@@ -8,6 +8,6 @@ router.get('/', isLoggedIn, profilesCtrl.index)
 
 router.get('/:id', isLoggedIn, profilesCtrl.show)
 
-
+router.post('profiles/:id/reviews', isLoggedIn, profilesCtrl.createReview)
 
 export { router }

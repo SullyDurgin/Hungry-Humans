@@ -11,12 +11,13 @@ const reviewSchema = new Schema(
 			max: 5,
 			default: 5,
 		},
+		recipes: [{ type: Schema.Types.ObjectId, ref: 'Recipe' }],
 	},
 	{
 		timestamps: true,
 	}
 )
 
-const Review = mongoose.model('review', reviewSchema)
+const Review = mongoose.model('Review', reviewSchema)
 
 export { Review }

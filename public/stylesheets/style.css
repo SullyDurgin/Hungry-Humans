@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box
+  list-style: none;
 }
 
 /* The Universal Selector */
@@ -40,4 +41,9 @@ main {
 
 h1 {
   font-size: 60px;
+}
+
+ul {
+  list-style: none;
+  font-size: 40px;
 }
