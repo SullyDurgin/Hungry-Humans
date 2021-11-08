@@ -8,11 +8,7 @@
           Name:
           <input type="text" name="name" value="<%= recipe.name %>" autocomplete="off">
         </label>
-        <label>
-          Is this a favorite?
-          <input type="checkbox" name="tasty" <%=recipe.favorite ? "checked" : "" %>
-          >
-        </label>
+    
         <button type="submit">Edit the recipe</button>
       </form>
     </section>

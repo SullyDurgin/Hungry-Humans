@@ -16,9 +16,6 @@ router.get('/:id/edit', recipesCtrl.edit)
 // localhost:3000/recipes - POST
 router.post('/', isLoggedIn, recipesCtrl.create)
 
-// localhost:3000/recipes/:id/flip-tasty - PATCH
-router.patch('/:id/unfavorite', isLoggedIn, recipesCtrl.unfavorite)
-
 // localhost:3000/recipes/:id - PUT
 router.put('/:id', isLoggedIn, recipesCtrl.update)
 

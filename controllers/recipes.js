@@ -15,8 +15,8 @@ function index(req, res) {
 }
 
 function create(req, res) {
-	req.body.author = req.user.profile._id
-	req.body.favorite = !!req.body.favorite
+	req.body.owner = req.user.profile._id
+	req.body.review = !!req.body.review
 	Recipe.create(req.body)
 		.then((recipe) => {
 			res.redirect('/recipes')
@@ -29,26 +29,11 @@ function create(req, res) {
 
 function show(req, res) {
 	Recipe.findById(req.params.id)
-		.populate('author')
+		.populate('owner')
 		.then((recipe) => {
 			res.render('recipes/show', {
 				recipe,
 				title: 'Show Recipes',
-			})
-		})
-		.catch((err) => {
-			console.log(err)
-			res.redirect('/recipes')
-		})
-}
-
-function unfavorite(req, res) {
-	recipe
-		.findById(req.params.id)
-		.then((recipe) => {
-			recipe.favorite = !recipe.favorite
-			recipe.save().then(() => {
-				res.redirect(`/recipes/${recipe._id}`)
 			})
 		})
 		.catch((err) => {
@@ -74,9 +59,9 @@ function edit(req, res) {
 function update(req, res) {
 	Recipe.findById(req.params.id)
 		.then((recipe) => {
-			if (recipe.author.equals(req.user.profile._id)) {
+			if (recipe.owner.equals(req.user.profile._id)) {
 				// the person that created the recipe is trying to edit the recipe
-				req.body.favorite = !!req.body.favorite
+				req.body.review = !!req.body.review
 				recipe.updateOne(req.body, { new: true }).then(() => {
 					res.redirect(`/recipes/${recipe._id}`)
 				})
@@ -93,7 +78,7 @@ function update(req, res) {
 function deleteRecipe(req, res) {
 	Recipe.findById(req.params.id)
 		.then((recipe) => {
-			if (recipe.author.equals(req.user.profile._id)) {
+			if (recipe.owner.equals(req.user.profile._id)) {
 				// the person that created the recipe is trying to delete the recipe
 				recipe.delete().then(() => {
 					res.redirect('/recipes')
@@ -109,4 +94,4 @@ function deleteRecipe(req, res) {
 		})
 }
 
-export { index, create, show, unfavorite, edit, update, deleteRecipe as delete }
+export { index, create, show, edit, update, deleteRecipe as delete }

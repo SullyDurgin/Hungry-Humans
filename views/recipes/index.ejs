@@ -11,8 +11,12 @@
             <input type="text" name="name" autocomplete="off">
           </label>
           <label>
-            favorite?
-            <input type="checkbox" name="favorite">
+            Ingredients:
+            <input type="text" name="ingredients" autocomplete="off">
+          </label>
+          <label>
+            Instructions:
+            <input type="text" name="instructions" autocomplete="off">
           </label>
           <button type="submit">Add Recipe </button>
         </form>
@@ -24,7 +28,6 @@
                 <a href="/recipes/<%= recipe._id %>">
                   <%= recipe.name %>
                 </a>
-                is <%= recipe.favorite ? "favorite" : "not favorite" %>
               </li>
               <% }) %>
           </ul>
