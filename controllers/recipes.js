@@ -16,7 +16,6 @@ function index(req, res) {
 
 function create(req, res) {
 	req.body.owner = req.user.profile._id
-	req.body.review = !!req.body.review
 	Recipe.create(req.body)
 		.then((recipe) => {
 			res.redirect('/recipes')
@@ -94,4 +93,18 @@ function deleteRecipe(req, res) {
 		})
 }
 
-export { index, create, show, edit, update, deleteRecipe as delete }
+function createReview(req, res) {
+  Recipe.findById(req.params.id, function(error, recipe) {
+    recipe.reviews.push(req.body)
+    console.log(recipe)
+    recipe.save(function(err) {
+      res.redirect(`/recipes/${recipe._id}`)
+    })
+  })
+	.catch ((err) => {
+			console.log(err)
+			res.redirect(`/recipes/${recipe._id}`)
+		})
+}
+
+export { index, create, show, edit, update, deleteRecipe as delete, createReview }

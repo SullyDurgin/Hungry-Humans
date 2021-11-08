@@ -33,6 +33,34 @@ function show(req, res) {
 		})
 }
 
+function createReview(req, res) {
+	Profile.findById(req.user.profile._id)
+		.then((profile) => {
+			profile.reviews.push(req.body)
+			profile.save().then(() => {
+				res.redirect(`/profiles/${req.user.profile._id}`)
+			})
+		})
+		.catch((err) => {
+			console.log(err)
+			res.redirect(`/profiles/${req.user.profile._id}`)
+		})
+}
+
+function deleteReview(req, res) {
+	Profile.findById(req.user.profile._id)
+		.then((profile) => {
+			profile.Reviews.remove({ _id: req.params.id })
+			profile.save().then(() => {
+				res.redirect(`/profiles/${req.user.profile._id}`)
+			})
+		})
+		.catch((err) => {
+			console.log(err)
+			res.redirect(`/profiles/${req.user.profile._id}`)
+		})
+}
 
 
-export { index, show}
+
+export { index, show, createReview, deleteReview}

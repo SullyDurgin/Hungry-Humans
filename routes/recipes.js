@@ -10,6 +10,7 @@ router.get('/', recipesCtrl.index)
 // localhost:3000/recipes/:id - GET
 router.get('/:id', recipesCtrl.show)
 
+
 // localhost:3000/recipes/:id/edit
 router.get('/:id/edit', recipesCtrl.edit)
 
@@ -22,6 +23,6 @@ router.put('/:id', isLoggedIn, recipesCtrl.update)
 // localhost:3000/recipes/:id - DELETE
 router.delete('/:id', isLoggedIn, recipesCtrl.delete)
 
-router.post('/recipes/:id/reviews', isLoggedIn, recipesCtrl.createReview)
+router.post('/:id/reviews', isLoggedIn, recipesCtrl.createReview)
 
 export { router }
