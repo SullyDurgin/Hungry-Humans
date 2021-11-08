@@ -6,6 +6,7 @@ nav {
 }
 
 body {
+text-align: center;
   background-color: #eaeaea;
 }
 
@@ -21,7 +22,7 @@ body {
   border: 1px solid #ececec;
   height: 80vh;
   border-radius: 10px;
-  background-image: url('https://i.ibb.co/163v6Dt/1-shopping-bag-full-of-fresh-produce-science-photo-library-removebg-preview.png');
+  background-image: url('https://i.ibb.co/mNYk7hw/HF-Illustrations-Homepage-DE-v2-03.webp');
   background-repeat: no-repeat;
   background-size: 45vw;
   background-position: 100% 50%;
@@ -33,13 +34,13 @@ body {
   position: absolute;
   font-weight: 800;
   font-size: 6vw;
-  width: 60%;
+  width: 50%;
   margin: 0;
   line-height: 1;
   top: 50%;
   color: #333;
-  left: 5%;
-  transform: translate(0, -55%);
+  left: 4%;
+  transform: translate(0, -50%);
 }
 
 p{
