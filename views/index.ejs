@@ -1,8 +1,11 @@
 <%- include('./partials/html-head') %>
 <%- include('./partials/nav') %>
 
+
 <main>
-  <h1>Welcome <%= user ? user.profile.name : "Hungry Human" %></h1>
+  <div class="flex-container">
+    <section id="welcome">
+  <h1>Hope You're Hungry <%= user ? user.profile.name : "Beautiful Human" %>!</h1>
   <% if (user?.profile.avatar) { %>
     <div>
       <img 
@@ -12,6 +15,8 @@
     </div>
   <% } %>
 <section>
-
+  </section>
+  </div>
+  </main>
 
 <%- include('./partials/footer') %>

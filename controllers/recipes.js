@@ -26,20 +26,6 @@ function create(req, res) {
 		})
 }
 
-// function show(req, res) {
-// 	Recipe.findById(req.params.id)
-// 		.populate('owner')
-// 		.then((recipe) => {
-// 			res.render('recipes/show', {
-// 				recipe,
-// 				title: 'Show Recipes',
-// 			})
-// 		})
-// 		.catch((err) => {
-// 			console.log(err)
-// 			res.redirect('/recipes')
-// 		})
-// }
 
 
 function show(req, res) {
@@ -60,7 +46,6 @@ function show(req, res) {
 				}
 			)
 		}
-
 
 
 

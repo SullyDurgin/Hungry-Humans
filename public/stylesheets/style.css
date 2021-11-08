@@ -1,49 +1,62 @@
-html {
-  box-sizing: border-box
 
-}
-
-/* The Universal Selector */
-*, /* All elements*/
-*::before, /* All ::before pseudo-elements */
-*::after { /* All ::after pseudo-elements */
-  /* height & width will now include border & padding by default
-     but can be over-ridden as needed */
-  box-sizing: inherit;
-}
-
-/* resets font size to be 62.5% of the user preference - 
-     in most browser configurations this will be 10px */
-:root {
-    font-size: 62.5%;
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 40px;
 }
 
 body {
-  text-align: center;
-  background-color: rgb(229, 113, 113);
-  font-family: monospace;
-  margin: 0;
+  background-color: #eaeaea;
 }
 
-nav {
-  background-color: gray;
-  padding: 18px;
-  font-size: 25px;
-}
-
-main {
-
+.container{
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  padding: 20px;
 }
 
-h1 {
-  font-size: 60px;
+#welcome{
+  margin: 10vh;
+  background-color: #eaeaea;
+  border: 1px solid #ececec;
+  height: 80vh;
+  border-radius: 10px;
+  background-image: url('https://i.ibb.co/163v6Dt/1-shopping-bag-full-of-fresh-produce-science-photo-library-removebg-preview.png');
+  background-repeat: no-repeat;
+  background-size: 45vw;
+  background-position: 100% 50%;
+  position: relative;
 }
 
-ul {
-  list-style: none;
-  font-size: 40px;
+#welcome h1{
+  font-family: "futura-pt";
+  position: absolute;
+  font-weight: 800;
+  font-size: 6vw;
+  width: 60%;
+  margin: 0;
+  line-height: 1;
+  top: 50%;
+  color: #333;
+  left: 5%;
+  transform: translate(0, -55%);
+}
+
+p{
+  margin: 0;
+}
+a:link, a:visited {
+  background-color: rgb(121, 144, 121);
+  color: white;
+  border: 2px solid rgb(121, 144, 121);
+  border-radius: 25%;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: rgb(74, 96, 74);
+  color: white;
 }
