@@ -24,4 +24,6 @@ router.delete('/:id', isLoggedIn, recipesCtrl.delete)
 
 router.post('/:id/reviews', isLoggedIn, recipesCtrl.createReview)
 
+router.delete('/:id/reviews', isLoggedIn, recipesCtrl.delete)
+
 export { router }

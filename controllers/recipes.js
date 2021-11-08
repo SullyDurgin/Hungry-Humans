@@ -113,4 +113,25 @@ function createReview(req, res) {
 		
 }
 
-export { index, create, show, edit, update, deleteRecipe as delete, createReview }
+function deleteReview(req, res) {
+	Profile.findById(req.user.profile._id)
+		.then((profile) => {
+			profile.Reviews.remove({ _id: req.params.id })
+			profile.save().then(() => {
+				res.redirect(`/profiles/${req.user.profile._id}`)
+			})
+		})
+		.catch((err) => {
+			console.log(err)
+			res.redirect(`/profiles/${req.user.profile._id}`)
+		})
+}
+
+// function randomRecipe(req, res) {
+//    Recipe.findOne().skip(random).exec(
+//     function (err, result) {
+// }
+
+
+
+export { index, create, show, edit, update, deleteRecipe as delete, createReview, deleteReview, }
