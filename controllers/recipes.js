@@ -126,11 +126,12 @@ function deleteReview(req, res) {
 }
 
 function randomRecipe(req, res) {
+	console.log("recipe random")
   Recipe.count().exec(function (err, count) {
   let random = Math.floor(Math.random() * count)
   Recipe.findOne().skip(random).exec(
     function (err, result) {
-			res.redirect(302, `/recipes/${randomRecipe._id}`)
+			res.redirect(302, `/recipes/${result._id}`)
 		})
 	})
 }

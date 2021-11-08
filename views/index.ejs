@@ -8,9 +8,10 @@
   <h1>Hope You're Hungry <%= user ? user.profile.name : "Human" %>!</h1>
   <% if (user?.profile.avatar) { %>
     <div>
-      <form action="recipes/random" method="GET">
+      <form action="/recipes/random" method="GET">
         <button class="btn" type="submit">Random Recipe</button>
       </form>
+     
     </div>
   <% } %>
 <section>
