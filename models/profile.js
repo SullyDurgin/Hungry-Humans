@@ -18,8 +18,6 @@ const reviewSchema = new Schema(
 )
 
 
-
-
 const profileSchema = new mongoose.Schema(
 	{
 		name: String,

@@ -34,17 +34,17 @@ function show(req, res) {
 }
 
 function createReview(req, res) {
-	Profile.findById(req.user.profile._id)
-		.then((profile) => {
-			profile.reviews.push(req.body)
-			profile.save().then(() => {
-				res.redirect(`/profiles/${req.user.profile._id}`)
-			})
+	console.log('creating review for', req.params.id)
+	console.log(req.body)
+	Recipe.findById(req.params.id, function (error, recipe) {
+		recipe.tickets.push(req.body)
+		recipe.save(function (err) {
+			res.redirect(`/recipes/${recipe._id}`)
 		})
-		.catch((err) => {
-			console.log(err)
-			res.redirect(`/profiles/${req.user.profile._id}`)
-		})
+	}).catch((err) => {
+		console.log(err)
+		res.redirect(`/recipes/${recipe._id}`)
+	})
 }
 
 function deleteReview(req, res) {

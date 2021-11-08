@@ -10,7 +10,6 @@ router.get('/', recipesCtrl.index)
 // localhost:3000/recipes/:id - GET
 router.get('/:id', recipesCtrl.show)
 
-
 // localhost:3000/recipes/:id/edit
 router.get('/:id/edit', recipesCtrl.edit)
 

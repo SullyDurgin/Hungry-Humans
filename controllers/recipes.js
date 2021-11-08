@@ -26,20 +26,43 @@ function create(req, res) {
 		})
 }
 
+// function show(req, res) {
+// 	Recipe.findById(req.params.id)
+// 		.populate('owner')
+// 		.then((recipe) => {
+// 			res.render('recipes/show', {
+// 				recipe,
+// 				title: 'Show Recipes',
+// 			})
+// 		})
+// 		.catch((err) => {
+// 			console.log(err)
+// 			res.redirect('/recipes')
+// 		})
+// }
+
+
 function show(req, res) {
 	Recipe.findById(req.params.id)
 		.populate('owner')
-		.then((recipe) => {
-			res.render('recipes/show', {
-				recipe,
-				title: 'Show Recipes',
-			})
-		})
-		.catch((err) => {
-			console.log(err)
-			res.redirect('/recipes')
-		})
-}
+		.exec(function (err, recipe) {
+			console.log(recipe.owner)
+					let total = 0
+					recipe.reviews.forEach(function (review) {
+						total += review.rating
+					})
+					let averageReviewScore = (total / recipe.reviews.length).toFixed(1)
+					res.render('recipes/show', {
+						title: `${recipe.name}'s Details`,
+						averageReviewScore,
+						recipe,
+					})
+				}
+			)
+		}
+
+
+
 
 function edit(req, res) {
 	Recipe.findById(req.params.id)
@@ -94,14 +117,14 @@ function deleteRecipe(req, res) {
 }
 
 function createReview(req, res) {
-  Recipe.findById(req.params.id, function(error, recipe) {
-    recipe.reviews.push(req.body)
-    console.log(recipe)
-    recipe.save(function(err) {
-      res.redirect(`/recipes/${recipe._id}`)
-    })
-  })
-	.catch ((err) => {
+  	console.log('creating review for', req.params.id)
+		console.log(req.body)
+		Recipe.findById(req.params.id, function (error, recipe) {
+			recipe.tickets.push(req.body)
+			recipe.save(function (err) {
+				res.redirect(`/recipes/${recipe._id}`)
+			})
+		}).catch((err) => {
 			console.log(err)
 			res.redirect(`/recipes/${recipe._id}`)
 		})
