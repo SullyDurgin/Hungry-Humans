@@ -4,8 +4,11 @@ import { isLoggedIn } from '../middleware/middleware.js'
 
 const router = Router()
 
+
 // localhost:3000/recipes - GET
 router.get('/', recipesCtrl.index)
+
+router.get('/recipes/random', isLoggedIn, recipesCtrl.randomRecipe)
 
 // localhost:3000/recipes/:id - GET
 router.get('/:id', recipesCtrl.show)
@@ -25,5 +28,6 @@ router.delete('/:id', isLoggedIn, recipesCtrl.delete)
 router.post('/:id/reviews', isLoggedIn, recipesCtrl.createReview)
 
 router.delete('/:id/reviews', isLoggedIn, recipesCtrl.delete)
+
 
 export { router }

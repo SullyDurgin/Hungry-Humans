@@ -23,6 +23,7 @@ body {
 
 h1 {
   font-size: 35px;
+  padding: 10px;
 }
 
 #welcome{
@@ -54,9 +55,7 @@ h1 {
 
 #reviews {
  font-size: 25px;
- display: flex;
- justify-content: center;
- flex-direction: column;
+ padding: 30px;
 }
 
 p{
@@ -88,6 +87,6 @@ ul {
 
 #add-review-form{
   display: flex;
-  justify-content: center;
-  padding: 20px;
+  justify-content: space-evenly;
+  flex-direction: column;
 }

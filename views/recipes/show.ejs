@@ -14,6 +14,7 @@
         <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
           <button class="btn" type="submit">Delete this recipe </button>
         </form>
+        
         <% } %>
 </section>
 <section>
@@ -32,8 +33,6 @@
 <wrapper id="reviews">
           <form id="add-review-form" action="/recipes/<%= recipe._id %>/reviews" method="POST">
           <label>
-            <label for="content-textarea">Review:</label>
-            <textarea name="content" id="content-textarea"></textarea>
             <label for="rating-select">Rating:</label>
             <select name="rating" id="rating-select">
               <option value="1">1</option>
@@ -42,8 +41,11 @@
               <option value="4">4</option>
               <option value="5" selected>5</option>
             </select>
+            <label for="content-textarea">Review:</label>
+            <textarea name="content" id="content-textarea"></textarea>
             <button type="submit">Add Review</button>
-        </form>
+        </form> 
+       
         <% if (recipe.reviews.length) { %>
           <table>
             <thead>
@@ -72,6 +74,7 @@
                       <tr>
                         <td colspan="2"></td>
                         <td>
+                          <h3>Average Review Score</h3>
                           <strong>
                             <%= averageReviewScore %>
                           </strong>
