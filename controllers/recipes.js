@@ -120,14 +120,12 @@ function createReview(req, res) {
   	console.log('creating review for', req.params.id)
 		console.log(req.body)
 		Recipe.findById(req.params.id, function (error, recipe) {
-			recipe.tickets.push(req.body)
-			recipe.save(function (err) {
+			recipe.reviews.push(req.body)
+			recipe.save(function (error) {
 				res.redirect(`/recipes/${recipe._id}`)
 			})
-		}).catch((err) => {
-			console.log(err)
-			res.redirect(`/recipes/${recipe._id}`)
 		})
+		
 }
 
 export { index, create, show, edit, update, deleteRecipe as delete, createReview }
