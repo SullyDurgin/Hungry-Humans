@@ -2,19 +2,19 @@
   <%- include("../partials/nav") %>
 
     <section>
-      <h1>Edit <%= recipe.name %> </h1>
+      <h1>Edit: <%= recipe.name %> </h1>
       <form action="/Recipes/<%= recipe._id %>?_method=PUT" method="POST">
           <label>
-            Name:
-            <input type="text" name="name" autocomplete="off">
+            Name: 
+            <input type="text" name="name" value=<%= recipe.name %> autocomplete="off">
           </label>
           <label>
-            Ingredients:
-            <input type="text" name="ingredients" autocomplete="off">
+            Ingredients: 
+            <input type="text" name="ingredients" value=<%= recipe.ingredients %> autocomplete="off">
           </label>
           <label>
             Instructions:
-            <input type="text" name="instructions" autocomplete="off">
+            <input type="text" name="instructions" value=<%= recipe.instructions %> autocomplete="off">
           </label>
     
         <button type="submit">Submit Updates</button>
