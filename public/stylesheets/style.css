@@ -28,7 +28,7 @@ h1 {
 
 
 #welcome{
-  margin: 5vh;
+  margin: 20px;
   background-color: #fffaf0;
   border: double #800020;
   height: 80vh;
@@ -176,4 +176,8 @@ ul {
   box-shadow: 0px 15px 20px #af435e;
   color: #fff;
   transform: translateY(-7px);
+}
+
+.logo {
+  margin: 100px 60px;
 }
