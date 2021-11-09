@@ -5,12 +5,12 @@
 
     <body>
       <nav>
-        <a href="/recipes">Recipes</a>
-        <a href="/profiles">Profiles</a>
+        <a class="nav-button" href="/recipes">Recipes</a>
+        <a class="nav-button" href="/profiles">Profiles</a>
         <% if (user) { %>
-          <a href="/auth/logout"> Logout</a>
+          <a class="nav-button" href="/auth/logout"> Logout</a>
           <% } else { %>
-            <a href="/auth/google" class="siwg-link">
+            <a class="nav-button-google" href="/auth/google" class="siwg-link">
               <button type="submit" class="siwg">
                 <img id="siwg-image" alt="Sign in with Google" />
               </button> 
