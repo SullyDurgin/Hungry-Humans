@@ -213,7 +213,7 @@ ul {
     height: 2px;
     margin-bottom: 5px;
     position: relative;
-    background: white;
+    background: rgb(240, 238, 238);
     border-radius: 3px;
     z-index: 1;
     transform-origin: 3px 0px;
@@ -297,20 +297,26 @@ ul {
 
 body { 
   text-align: center;
-  background-color:	#fffaf0;
+  background-color:	#9e8486;
   border: double #800020;
   font-family: monospace;
-  margin: 20px;
   min-height: 100vh;
   
 }
 
-
-h1 {
-  font-size: 35px;
-  padding: 10px;
+form {
+  margin-right: 16px;
 }
 
+h1 {
+  font-size: 10px;
+  padding-top: 90px;
+}
+
+h2 {
+  font-size: 20px;
+  
+}
 
 #welcome {
   margin: 10px;
@@ -340,7 +346,7 @@ h1 {
 }
 
 #reviews {
- font-size: 25px;
+ font-size: 12px;
  padding: 30px;
 }
 
@@ -353,17 +359,18 @@ ul {
   margin: 20px;
   text-align: center;
   list-style: none;
-  font-size: 20px;
+  font-size: 12px;
 }
 
 #add-review-form{
+  margin-bottom: 20px;
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
 }
 
 .recipe-label {
- padding: 10px;
+ padding-bottom: 30px;
 
 }
 
@@ -371,7 +378,7 @@ ul {
   display: flex;
   justify-content: center;
   flex-direction: row;
-  padding-bottom: 45px;
+  padding-bottom: 20px;
   margin: 10px;
 
 }
@@ -387,7 +394,6 @@ ul {
 }
 
 .edit-btn {
-
   background-color: white ;
   color: #800020;
   padding-bottom: 40px;
@@ -403,10 +409,9 @@ ul {
 
 #random {
   margin-top: 150px;
-  width: 50%;
-  padding-top: 20px;
+  width: 30%;
+  padding-top: 15px;
   padding-bottom: 50px;
-  
   
 }
 
@@ -462,6 +467,27 @@ ul {
   transform: translateY(-7px);
 }
 
+#review-btn {
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
 
+.input-forms {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.text-list {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: smaller;
+}
+
+#update-btn {
+  margin-bottom: 80px;
+}
 
 }

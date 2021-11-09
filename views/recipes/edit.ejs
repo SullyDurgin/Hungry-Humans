@@ -4,7 +4,7 @@
     <section>
       <h1>Edit: <%= recipe.name %> </h1>
       <form action="/Recipes/<%= recipe._id %>?_method=PUT" method="POST">
-        <section>
+        <section class="text-list">
           <h2>
             <%= recipe.name %>
           </h2>
@@ -19,9 +19,11 @@
             </li>
           </ul>
         </section>
+        <div class="input-forms">
           <label>
             Name: 
             <input type="text" name="name" value="<%= recipe.name %>" />
+          </label>
           <label>
             Ingredients: 
             <textarea name="ingredients"><%= recipe.ingredients %></textarea>
@@ -31,8 +33,8 @@
             <textarea name="instructions"><%= recipe.instructions %></textarea>
             </label>
           </label>
-    
-        <button type="submit">Update</button>
+        </div>
+        <button id="update-btn" type="submit">Update</button>
       </form>
     </section>
 
