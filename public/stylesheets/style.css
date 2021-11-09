@@ -24,7 +24,7 @@ h1 {
 }
 
 #welcome{
-  margin: 20px;
+  margin: 30px;
   background-color: #fffaf0;
   border: double #800020;
   height: 80vh;
@@ -60,7 +60,6 @@ p{
 }
 
 ul {
-  margin: 20px;
   list-style: none;
   font-size: 20px;
 }
@@ -310,7 +309,7 @@ form {
 
 h1 {
   font-size: 10px;
-  padding-top: 90px;
+ 
 }
 
 h2 {
@@ -336,12 +335,12 @@ h2 {
   position: absolute;
   font-weight: 800;
   font-size: 20px;
-  width: 40%;
+  width: 20%;
   margin: 0;
   line-height: 1;
-  top: 60%;
+  top: 10%;
   color: #333;
-  left: 25%;
+  left: 65%;
   transform: translate(0, -50%);
 }
 
@@ -408,16 +407,16 @@ ul {
 }
 
 #random {
-  margin-top: 150px;
-  width: 30%;
+  margin-top: 50px;
+  width: 50%;
   padding-top: 15px;
-  padding-bottom: 50px;
+  padding-bottom: 40px;
   
 }
 
 .logo {
-  margin-top: 160px;
-  width: 50%;
+  margin-top: 190px;
+  width: 80%;
 }
 
 .nav-button-google{
@@ -426,7 +425,6 @@ ul {
 }
 
 .recipes-list, .nav-button, button {
-  
   width: 140px;
   height: 30px;
   font-family: 'Roboto', sans-serif;
