@@ -3,11 +3,13 @@ nav {
   display: flex;
   justify-content: space-evenly;
   font-size: 40px;
-  background-color: #eaeaea;
+  padding: 20px;
+  background-color: #fffaf0;
 }
 
 body {
-  background-color: rgb(19, 88, 82);
+  background-color:	#fffaf0;
+  border: double rgb(73, 94, 73);
   font-family: monospace;
   text-align: center;
   margin: 20px;
@@ -28,8 +30,8 @@ h1 {
 
 #welcome{
   margin: 10vh;
-  background-color: #eaeaea;
-  border: 1px solid #ececec;
+  background-color: #fffaf0;
+  border: double rgb(73, 94, 73);
   height: 80vh;
   border-radius: 10px;
   background-image: url('https://i.ibb.co/mNYk7hw/HF-Illustrations-Homepage-DE-v2-03.webp');
