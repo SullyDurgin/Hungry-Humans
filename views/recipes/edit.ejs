@@ -19,15 +19,15 @@
         </section>
           <label>
             Name: 
-            <input type="text" name="name" placeholder=<%= recipe.name %> ></input>
-          </label>
+            <input type="text" name="name" value="<%= recipe.name %>" />
           <label>
             Ingredients: 
-            <textarea type="text" name="ingredients" placeholder=<%= recipe.ingredients %> "></textarea>
+            <textarea name="ingredients"><%= recipe.ingredients %></textarea>
           </label>
           <label>
             Instructions:
-            <textarea type="text" name="instructions" placeholder=<%= recipe.instructions %> ></textarea>
+            <textarea name="ingredients"><%= recipe.instructions %></textarea>
+            </label>
           </label>
     
         <button type="submit">Submit Updates</button>
