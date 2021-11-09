@@ -1,4 +1,4 @@
-@media only screen and (min-width: 610px) {
+@media only screen and (min-width: 600px) {
 nav {
   display: flex;
   justify-content: space-evenly;
@@ -211,8 +211,7 @@ h1 {
 }
 
 
-
-#welcome{
+#welcome {
   margin: 20px;
   background-color: #fffaf0;
   border: double #800020;
@@ -225,12 +224,12 @@ h1 {
   position: relative;
 }
 
-#welcome h1{
+#welcome h1 {
   font-family: monospace;
   position: absolute;
   font-weight: 800;
-  font-size: 30px;
-  width: 50%;
+  font-size: 20px;
+  width: 40%;
   margin: 0;
   line-height: 1;
   top: 60%;
@@ -302,14 +301,16 @@ ul {
 }
 
 #random {
-  margin: 120px;
-  padding-bottom: 55px;
+  margin-top: 150px;
+  width: 50%;
+  padding-top: 20px;
+  padding-bottom: 50px;
   
   
 }
 
 .logo {
-  margin-top: 180px;
+  margin-top: 160px;
   width: 50%;
 }
 
@@ -362,13 +363,5 @@ ul {
   color: #fff;
   transform: translateY(-7px);
 }
-
-
-
-
-
-
-
-
 
 }
