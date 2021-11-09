@@ -3,22 +3,22 @@
 
     <section>
       <h1>Recipes</h1>
-          <form action="/recipes/random" method="GET">
-            <button class="btn" type="submit">Random Recipe</button>
+        <wrapper class="recipe-buttons">
+            <form action="/recipes/random" method="GET">
+             <button class="recipe-btn" type="submit">Random Recipe</button>
+            </form>
+      <section class="update-buttons">
+
+        <% if (recipe.owner.equals(user?.profile._id)) { %>
+          <form action="/recipes/<%= recipe._id %>/edit" method="GET">
+          <button class="edit-btn" type="submit">Edit This Recipe</button>
           </form>
-
-<section>
-
-      <% if (recipe.owner.equals(user?.profile._id)) { %>
-        <form action="/recipes/<%= recipe._id %>/edit" method="GET">
-          <button class="btn" type="submit">Edit This Recipe</button>
-        </form>
-        <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
-          <button class="btn" type="submit">Delete this recipe </button>
-        </form>
-        
-        <% } %>
+          <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+          <button class="delete-btn" type="submit">Delete this recipe </button>
+          </form>
+          <% } %> 
 </section>
+</wrapper>
 <section>
   <h2>
     <%= recipe.name %>

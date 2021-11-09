@@ -4,7 +4,7 @@
     <section>
       <h1>Recipes: </h1>
         <form action="/recipes/random" method="GET">
-          <button class="btn" type="submit">Random Recipe</button>
+          <button class="recipe-btn" type="submit">Random Recipe</button>
         </form>
       <% if (user) { %>
         <h2>Add a Recipe That You Enjoy </h2>
@@ -27,7 +27,7 @@
           <h2>All the recipes!</h2>
           <ul>
             <% recipes.forEach(recipe=> { %>
-              <li>
+              <li class="recipe-label">
                 
                 <a href="/recipes/<%= recipe._id %>">
                   <%= recipe.name %>

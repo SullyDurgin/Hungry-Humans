@@ -9,7 +9,7 @@ nav {
 
 body {
   background-color:	#fffaf0;
-  border: double rgb(73, 94, 73);
+  border: double #800020;
   font-family: monospace;
   text-align: center;
   margin: 20px;
@@ -31,7 +31,7 @@ h1 {
 #welcome{
   margin: 10vh;
   background-color: #fffaf0;
-  border: double rgb(73, 94, 73);
+  border: double #800020;
   height: 80vh;
   border-radius: 10px;
   background-image: url('https://i.ibb.co/mNYk7hw/HF-Illustrations-Homepage-DE-v2-03.webp');
@@ -64,10 +64,10 @@ p{
   margin: 0;
 }
 a:link, a:visited {
-  background-color: rgb(121, 144, 121);
+  background-color: #800020;
   color: white;
-  border: 2px solid rgb(121, 144, 121);
-  border-radius: 25%;
+  border: 2px solid #800020;
+  border-radius: 15px;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
@@ -76,7 +76,7 @@ a:link, a:visited {
 }
 
 a:hover, a:active {
-  background-color: rgb(74, 96, 74);
+  background-color: #800020;
   color: white;
 }
 
@@ -91,4 +91,45 @@ ul {
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
+}
+
+.recipe-label {
+  margin-bottom: 5px;
+
+}
+
+.update-buttons{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+
+}
+
+.recipe-buttons{
+  
+  padding: 30px;
+  font-size: 30px;
+}
+
+.recipe-btn{
+
+  background-color: #800020;
+  color: white;
+  font-size: 35px;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.edit-btn {
+  background-color: white ;
+  color: #800020;
+}
+
+.delete-btn {
+  background-color: #800020;
+  color: white;
+}
+
+#random {
+  margin-top: 25px;
 }
