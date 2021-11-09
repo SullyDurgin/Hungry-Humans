@@ -21,7 +21,7 @@ const reviewSchema = new Schema(
 
 const recipeSchema = new Schema({
 	name: String,
-	ingredients: String,
+	ingredients: Array,
 	instructions: String,
 	owner: {type: Schema.Types.ObjectId, ref: 'Profile'},
 	reviews: [reviewSchema],

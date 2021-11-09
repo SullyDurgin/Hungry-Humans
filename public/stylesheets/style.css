@@ -9,11 +9,11 @@ nav {
 }
 
 
-body {
+body { 
+  text-align: center;
   background-color:	#fffaf0;
   border: double #800020;
   font-family: monospace;
-  text-align: center;
   margin: 20px;
   min-height: 100vh;
   
@@ -41,7 +41,7 @@ h1 {
 }
 
 #welcome h1{
-  font-family: "futura-pt";
+  font-family: monospace;
   position: absolute;
   font-weight: 800;
   font-size: 35px;
@@ -136,7 +136,7 @@ ul {
   padding-top: 20px;
 }
 
-.nav-button, button {
+.recipes-list, .nav-button, button {
   
   width: 140px;
   height: 30px;
@@ -164,7 +164,14 @@ ul {
   transform: translateY(-7px);
 }
 
-button:hover  {
+ button:hover  {
+  background-color: #800020;
+  box-shadow: 0px 15px 20px #af435e;
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.recipes-list:hover  {
   background-color: #800020;
   box-shadow: 0px 15px 20px #af435e;
   color: #fff;
