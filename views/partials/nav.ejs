@@ -4,16 +4,26 @@
     </head>
 
     <body>
-      <nav>
-        <a class="nav-button" href="/recipes">Recipes</a>
-        <a class="nav-button" href="/profiles">Profiles</a>
+    <nav class="mobilescreen">
+      <div title="Menu" id="menuToggle">
+        <input id="checkbox" type="checkbox">
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul id="menu">
+        <li><a class="nav-button" href="/recipes">Recipes</a></li>
+        <li><a  class="nav-button" href="/profiles">Profiles</a></li>
         <% if (user) { %>
-          <a class="nav-button" href="/auth/logout"> Logout</a>
+          <li><a class="nav-button" href="/auth/logout"> Logout</a></li>
           <% } else { %>
-            <a class="nav-button-google" href="/auth/google" class="siwg-link">
+          <li> <a class="nav-button-google" href="/auth/google" class="siwg-link"></li>
               <button type="submit" class="siwg">
                 <img id="siwg-image" alt="Sign in with Google" />
               </button> 
             </a>
             <% } %>
+                    </ul>
+                    </div>
       </nav>
+
+      
