@@ -11,7 +11,9 @@ body {
   font-family: monospace;
   margin: 50px;
   min-height: 100vh;
-  
+   background-image: url("https://i.ibb.co/3kBjsRw/stock-photo-checked-table-cloth-at-wooden-surface-background-top-view-1174998574-copy.jpg");
+   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 li {
@@ -40,13 +42,16 @@ h1 {
   font-family: monospace;
   position: absolute;
   font-weight: 800;
-  font-size: 30px;
+  font-size: 25px;
   width: 50%;
   margin: 0;
   line-height: 1;
-  top: 10%;
-  color: #e40e0e;
-  left: 50%;
+  top: 30%;
+  color: black;
+  -webkit-text-fill-color: rgb(85, 16, 16); /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  left: 25%;
   transform: translate(0, -50%);
 }
 
@@ -126,7 +131,7 @@ ul {
 }
 
 .logo {
-  margin: 180px;
+  margin-top: 220px;
   width: 30%;
 }
 

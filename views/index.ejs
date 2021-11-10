@@ -4,17 +4,17 @@
 <main>
   <div class="welcome-container">
     <section id="welcome">
-      <h1>Hope You're Hungry <%= user ? user.profile.name : "Human" %>!</h1>
       <img src="https://i.ibb.co/jMxNrcj/Screen-Shot-2021-11-09-at-10-31-41-AM-removebg-preview.png" class="logo">
   
   <% if (user?.profile.avatar) { %>
-    
+    <h1>Hope you're hungry <%= user ? user.profile.name : "Human" %>!</h1>
       <form action="/recipes/random" method="GET">
         <button id="random" class="recipe-btn" type="submit">Click for Random Recipe</button>
       </form>
   <% } %>
   </section>
   </div>
+  
   </main>
 
 <%- include('./partials/footer') %>
