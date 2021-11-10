@@ -48,7 +48,7 @@ h1 {
   line-height: 1;
   top: 30%;
   color: black;
-  -webkit-text-fill-color: rgb(85, 16, 16); /* Will override color (regardless of order) */
+  -webkit-text-fill-color: rgb(85, 16, 16); 
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
   left: 25%;
@@ -61,6 +61,8 @@ h1 {
 }
 
 p{
+  color: black;
+  font-weight: 800;
   margin: 0;
 }
 
@@ -185,7 +187,7 @@ ul {
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 5px;
-  width: 500px;
+  width: 400px;
 }
 
 #rec-li {
