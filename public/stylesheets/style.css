@@ -40,13 +40,13 @@ h1 {
   font-family: monospace;
   position: absolute;
   font-weight: 800;
-  font-size: 35px;
+  font-size: 30px;
   width: 50%;
   margin: 0;
   line-height: 1;
-  top: 60%;
-  color: #333;
-  left: 25%;
+  top: 10%;
+  color: #e40e0e;
+  left: 50%;
   transform: translate(0, -50%);
 }
 
@@ -116,9 +116,13 @@ ul {
 
 #menu {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: row;
-  margin: 20px;
+  
+}
+
+.nav-button {
+  margin: 30px;
 }
 
 .logo {
@@ -127,10 +131,6 @@ ul {
 }
 
 .nav-button-google{
-  padding-left: 20px;
-  padding-right: 20px;
-}
-.nav-button{
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -174,6 +174,17 @@ ul {
   box-shadow: 0px 15px 20px #af435e;
   color: #fff;
   transform: translateY(-7px);
+}
+
+#user-img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 500px;
+}
+
+#rec-li {
+  margin-top: 30px;
 }
 
 }
@@ -299,9 +310,10 @@ ul {
 }
 
 body { 
+  color: white;
   text-align: center;
-  background-color:	#9e8486;
-  border: double #800020;
+  background-color:	#0d1f44;
+  border: double #92919c;
   font-family: monospace;
   min-height: 90vh;
   
@@ -324,7 +336,7 @@ h2 {
 #welcome {
   margin: 10px;
   background-color: #fffaf0;
-  border: double #800020;
+  border: double #fafafa;
   height: 92vh;
   border-radius: 5px;
   background-image: url("https://i.ibb.co/1LNtrpn/healthy-food-mockup-artcoast.jpg");
@@ -366,6 +378,7 @@ p{
 }
 
 .recipe-label {
+  margin: 10px;
   font-size: 12px;
   padding-bottom: 30px;
 
@@ -478,6 +491,7 @@ p{
   margin-bottom: 50px;
 }
 
+
 .text-list {
   display: flex;
   justify-content: center;
@@ -494,6 +508,10 @@ p{
   border-radius: 4px;
   padding: 5px;
   width: 100px;
+}
+
+#rec-li {
+  margin-top: 30px;
 }
 
 }
