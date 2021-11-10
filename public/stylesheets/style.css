@@ -63,9 +63,39 @@ h1 {
   
 }
 
+.review-table {
+  text-align: center;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 15px;
+}
+
+th {
+  background-color: #000102;
+  color: white;
+}
+
+th,
+td {
+  text-align: center;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.no-border{
+  border: none;
+}
+
+h2 {
+  color: rgb(85, 16, 16)rgb(85, 16, 16);
+}
+
 #reviews {
+
  font-size: 25px;
- padding: 30px;
+ padding: 60px;
 }
 
 p{
@@ -80,11 +110,7 @@ ul {
   font-size: 20px;
 }
 
-#add-review-form{
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: column;
-}
+
 
 .recipe-label {
  padding: 10px;
@@ -214,6 +240,11 @@ ul {
   margin-top: 30px;
 }
 
+.recipe-para {
+  text-align: center;
+  font-size: 15px;
+  margin: 50px;
+}
 
 }
 
