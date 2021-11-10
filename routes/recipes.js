@@ -10,6 +10,8 @@ router.get('/', recipesCtrl.index)
 
 router.get('/random', isLoggedIn, recipesCtrl.randomRecipe)
 
+router.get('/new', isLoggedIn, recipesCtrl.new)
+
 // localhost:3000/recipes/:id - GET
 router.get('/:id', recipesCtrl.show)
 
@@ -28,6 +30,8 @@ router.delete('/:id', isLoggedIn, recipesCtrl.delete)
 router.post('/:id/reviews', isLoggedIn, recipesCtrl.createReview)
 
 router.delete('/:id/reviews', isLoggedIn, recipesCtrl.delete)
+
+
 
 
 

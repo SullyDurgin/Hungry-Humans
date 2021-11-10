@@ -2,42 +2,18 @@
   <%- include("../partials/nav") %>
 
     <section>
-      <h1>Recipes: </h1>
-        <form action="/recipes/random" method="GET">
-          <button class="recipe-btn" type="submit">Random Recipe</button>
-        </form>
-      <% if (user) { %>
-        <h2>Add a Recipe That You Enjoy </h2>
-        <form action="/recipes" method="POST">
-          <label>
-            Name:
-            <input type="text" name="name" autocomplete="off">
-          </label>
-              <label>
-                Ingredients:
-                <input type="text" name="ingredients" autocomplete="off">
-              </label>
-            <label>
-              Instructions:
-              <input type="text" name="instructions" autocomplete="off">
-            </label>
-              <label for="img">Select image:
-              <input type="file" id="img" name="img" accept="image/*">
-              </label>
-          <button type="submit">Add </button>
-        </form>
-        <% } %>
+  
           <h2>All Recipes: </h2>
-          <ul>
+         
             <% recipes.forEach(recipe=> { %>
-              <li class="recipe-label">
+              <div class="recipe-label">
                 
                 <a class="recipes-list" href="/recipes/<%= recipe._id %>">
                   <%= recipe.name %>
                 </a>
-              </li>
+              </div>
               <% }) %>
-          </ul>
+         
     </section>
 
     <%- include("../partials/footer") %>

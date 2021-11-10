@@ -1,0 +1,27 @@
+<%- include("../partials/html-head") %>
+  <%- include("../partials/nav") %>
+
+    <section>
+      <h1>Recipes: </h1>
+      <form action="/recipes/random" method="GET">
+        <button class="recipe-btn" type="submit">Random Recipe</button>
+      </form>
+      <% if (user) { %>
+        <h2>Add a Recipe That You Enjoy </h2>
+        <form action="/recipes" method="POST">
+          <label>
+            <h3>Name:</h3>
+            <input type="text" name="name" autocomplete="off">
+          </label>
+          <label>
+            <h3>Ingredients:</h3>
+            <textarea type="text" name="ingredients" autocomplete="off"></textarea>
+          </label>
+          <label>
+            <h3>Instructions:</h3>
+            <textarea type="text" name="instructions" autocomplete="off"></textarea>
+          </label>
+          <br>
+          <button type="submit"> Add </button>
+        </form>
+        <% } %>

@@ -14,6 +14,12 @@ function index(req, res) {
 		})
 }
 
+function newRecipe(req, res) {
+	res.render('recipes/new', {
+		title: 'Add Recipe',
+	})
+}
+
 function create(req, res) {
 	req.body.owner = req.user.profile._id
 	Recipe.create(req.body)
@@ -31,17 +37,18 @@ function show(req, res) {
 	Recipe.findById(req.params.id)
 		.populate('owner')
 		.exec(function (err, recipe) {
+			console.log(recipe)
 			console.log(recipe.owner)
 					let total = 0
 					recipe.reviews.forEach(function (review) {
-						total += review.rating
+		 			total += review.rating
 					})
 					let averageReviewScore = (total / recipe.reviews.length).toFixed(1)
 					res.render('recipes/show', {
-						title: `${recipe.name}'s Details`,
-						averageReviewScore,
+					title: `${recipe.name}'s Details`,
+			 			averageReviewScore,
 						recipe,
-					})
+			 		})
 				}
 			)
 		}
@@ -136,4 +143,4 @@ function randomRecipe(req, res) {
 	})
 }
 
-export { index, create, show, edit, update, deleteRecipe as delete, createReview, deleteReview, randomRecipe}
+export { index, create, show, edit, update, deleteRecipe as delete, createReview, deleteReview, randomRecipe, newRecipe as new}
