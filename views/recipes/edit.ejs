@@ -16,8 +16,9 @@
             <p>
               <h2>Instructions:</h2>
               <%= recipe.instructions %>
-            <p>
-      
+            </p>
+           
+              
         </section>
         <div class="input-forms">
           <label>
@@ -32,10 +33,13 @@
             Instructions:
             <textarea name="instructions"><%= recipe.instructions %></textarea>
             </label>
+            <label>
+              Image:
+            <input type="text" name="image" autocomplete="off"></input>
           </label>
         </div>
         <button id="update-btn" type="submit">Update</button>
       </form>
     </section>
 
-    <%- include("../partials/footer") %>
+    

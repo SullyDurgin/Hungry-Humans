@@ -355,7 +355,6 @@ p{
 }
 
 
-
 #add-review-form{
   margin-bottom: 20px;
   display: flex;
@@ -364,8 +363,8 @@ p{
 }
 
 .recipe-label {
-font-size: 12px;
- padding-bottom: 30px;
+  font-size: 12px;
+  padding-bottom: 30px;
 
 }
 
@@ -374,7 +373,7 @@ font-size: 12px;
   justify-content: center;
   flex-direction: row;
   padding-bottom: 20px;
-  margin: 10px;
+  margin: 20px;
 
 }
 
@@ -384,21 +383,24 @@ font-size: 12px;
   padding-bottom: 30px;
   background-color: #800020;
   color: white;
-  border-radius: 15px;
+  border-radius: 10px;
   
 }
 
 .edit-btn {
+  font-size: 8px;
   background-color: white ;
   color: #800020;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
   margin: 10px;
+  margin-left: 25px;
 }
 
 .delete-btn {
+  font-size: 8px;
   background-color: #800020;
   color: white;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
   margin: 10px;
 }
 
@@ -482,6 +484,13 @@ font-size: 12px;
 
 #update-btn {
   margin-bottom: 80px;
+}
+
+#user-img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 100px;
 }
 
 }
