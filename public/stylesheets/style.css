@@ -55,6 +55,14 @@ h1 {
   transform: translate(0, -50%);
 }
 
+#inside{
+  margin: 20px;
+  background-color: #fffaf0;
+  border: double #800020;
+  border-radius: 10px;
+  
+}
+
 #reviews {
  font-size: 25px;
  padding: 30px;
@@ -189,10 +197,23 @@ ul {
   padding: 5px;
   width: 400px;
 }
+.input-forms {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#update-btn {
+  margin-bottom: 80px;
+  padding: 10px;
+}
 
 #rec-li {
   margin-top: 30px;
 }
+
 
 }
 
@@ -318,8 +339,6 @@ body {
   background-color:	#0d1f44;
   border: double #92919c;
   font-family: monospace;
-  min-height: 90vh;
-  
 }
 
 form {

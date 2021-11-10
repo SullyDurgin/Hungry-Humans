@@ -61,6 +61,4 @@ function deleteReview(req, res) {
 		})
 }
 
-
-
 export { index, show, createReview, deleteReview}

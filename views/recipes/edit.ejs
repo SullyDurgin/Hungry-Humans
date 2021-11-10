@@ -1,6 +1,7 @@
 <%- include("../partials/html-head") %>
   <%- include("../partials/nav") %>
-
+<div class="inside-container">
+  <section id="inside">
     <section>
       <h1>Edit: <%= recipe.name %> </h1>
       <form action="/Recipes/<%= recipe._id %>?_method=PUT" method="POST">
@@ -26,8 +27,8 @@
             <input type="text" name="name" value="<%= recipe.name %>" />
           </label>
           <label>
-            Ingredients: 
-            <textarea name="ingredients"><%= recipe.ingredients %></textarea>
+            <h3>Ingredients:</h3>
+            <textarea name="ingredients"><%= recipe.ingredients.join(", ") %></textarea>
           </label>
           <label>
             Instructions:
@@ -41,5 +42,7 @@
         <button id="update-btn" type="submit" name>Update</button>
       </form>
     </section>
+</section>
+</div>
 
     

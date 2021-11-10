@@ -74,6 +74,9 @@ function update(req, res) {
 			if (recipe.owner.equals(req.user.profile._id)) {
 				// the person that created the recipe is trying to edit the recipe
 				req.body.review = !!req.body.review
+				req.body.ingredients = req.body.ingredients
+					.split(',')
+					.map((ingredient) => ingredient.trim())
 				recipe.updateOne(req.body, { new: true }).then(() => {
 					res.redirect(`/recipes/${recipe._id}`)
 				})

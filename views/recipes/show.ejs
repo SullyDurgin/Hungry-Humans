@@ -1,6 +1,8 @@
 <%- include("../partials/html-head") %>
   <%- include("../partials/nav") %>
-
+  
+<div class="inside-container">
+  <section id="inside">
     <section>
       <h1>Recipes</h1>
         <wrapper class="recipe-buttons">
@@ -25,11 +27,18 @@
     <%= recipe.name %>
   </h2>
     <h1>Ingredients:</h1>
-    <p><%= recipe.ingredients %></p>
+    <ul>
+      <% recipe.ingredients.forEach(function(item,index){ %>
+        <li>
+          <%= item %>
+        </li>
+        <% }) %>
+    </ul>
     <h1>Instructions:</h1>
     <p><%= recipe.instructions %></p>
    
 </section>
+
 
 
 <wrapper id="reviews">
@@ -91,4 +100,6 @@
                     </main>
     </section>
 </wrapper>
+  </section>
+  </div>
     <%- include("../partials/footer") %>
