@@ -1,8 +1,9 @@
 <%- include("../partials/html-head") %>
   <%- include("../partials/nav") %>
 
+
+  <div class="body-border">
     <section>
-  
           <h2>All Recipes: </h2>
          
             <% recipes.forEach(recipe=> { %>
@@ -15,5 +16,5 @@
               <% }) %>
          
     </section>
-
+</div>
     <%- include("../partials/footer") %>

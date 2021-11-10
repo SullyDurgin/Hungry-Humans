@@ -11,10 +11,10 @@
         <span></span>
         <span></span>
         <ul id="menu">
-        <li><a id="recipe-nav" class="nav-button" href="/recipes">Recipes</a></li>
-        <li><a id="profile-nav" class="nav-button" href="/profiles">Profiles</a></li>
+        <li class="recipe-nav-btn"><a id="recipe-nav" class="nav-button" href="/recipes">Recipes</a></li>
+        <li class="profile-nav-btn"><a id="profile-nav" class="nav-button" href="/profiles">Profiles</a></li>
         <% if (user) { %>
-          <li><a id="add-nav" class="nav-button" href="/recipes/new">Add a Recipe</a></li>
+          <li class="add-nav-btn"><a id="add-nav" class="nav-button" href="/recipes/new">Add a Recipe</a></li>
           <li><a class="nav-button" href="/auth/logout"> Logout</a></li>
           <% } else { %>
           <li class="nav-button-google"> <a href="/auth/google" class="siwg-link"></li>
