@@ -7,10 +7,10 @@
         <div>
           <img class="profile-avatar" src="<%= profile.avatar %>" alt="<%= profile.name %> avatar">
         </div>
-          <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
+          <h1><%= isSelf ? "This guy" : profile.name %>'s list of Recipes</h1>
+      
           <% if (isSelf) { %>
             <form action="/profiles/<%= profile._id %>/profiles" method="POST">
-              
                   <% } %>
                     <% } else { %>
                       <h2>

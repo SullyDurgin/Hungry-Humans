@@ -22,6 +22,7 @@ const profileSchema = new mongoose.Schema(
 	{
 		name: String,
 		avatar: String,
+		recipes: {type: Schema.Types.ObjectId, ref: 'Recipe'},
 		reviews: [reviewSchema]
 	},
 	{
