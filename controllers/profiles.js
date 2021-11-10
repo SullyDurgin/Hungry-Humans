@@ -15,28 +15,23 @@ function index(req, res) {
 }
 
 function show(req, res) {
-  Profile.findById(req.params.id)
-  .then((profile) => {
-    Profile.find({owner: req.params.id})
-    .then(recipes =>{
-        Profile.findById(req.user.profile._id)
-        .then((self => {
-          const isSelf = self._id.equals(profile._id)
-          res.render("profiles/show", {
-            title: `${profile.name}'s profile`,
-            profile,
-            self,
-            isSelf,
-            recipes
-          })
-        })
-      )
-        })
+	Profile.findById(req.params.id)
+	.populate('recipes')
+		.then((profile) => {
+			Profile.findById(req.user.profile._id).then((self) => {
+				const isSelf = self._id.equals(profile._id)
+				res.render('profiles/show', {
+					profile,
+					title: `${profile.name}'s Recipes`,
+					self,
+					isSelf,
+				})
     })
-  .catch((err) => {
-    console.log(err)
-    res.redirect(`/profiles/${req.user.profile._id}`)
   })
+		.catch((err) => {
+			console.log(err)
+			res.redirect(`/profiles/${req.user.profile._id}`)
+		})
 }
 
 function createReview(req, res) {
