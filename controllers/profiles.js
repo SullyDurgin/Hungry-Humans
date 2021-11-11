@@ -16,7 +16,6 @@ function index(req, res) {
 
 function show(req, res) {
 	Profile.findById(req.params.id)
-		.populate('recipes')
 		.then((profile) => {
 			Profile.findById(req.user.profile._id).then((self) => {
 				const isSelf = self._id.equals(profile._id)
@@ -32,14 +31,13 @@ function show(req, res) {
 			console.log(err)
 			res.redirect(`/profiles/${req.user.profile._id}`)
 		})
-		console.log(profile.recipes)
 }
 
 function createReview(req, res) {
 	console.log('creating review for', req.params.id)
 	console.log(req.body)
 	Recipe.findById(req.params.id, function (error, recipe) {
-		recipe.tickets.push(req.body)
+		recipe.reviews.push(req.body)
 		recipe.save(function (err) {
 			res.redirect(`/recipes/${recipe._id}`)
 		})
