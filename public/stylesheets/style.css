@@ -24,7 +24,7 @@ body {
   background-color:	#fffaf0;
   border: double #800020;
   font-family: monospace;
-  background-image: url("https://i.ibb.co/3kBjsRw/stock-photo-checked-table-cloth-at-wooden-surface-background-top-view-1174998574-copy.jpg");
+  background-image: url("https://i.ibb.co/Y0tcFKp/Cutting-board-in-kitchen.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -130,6 +130,7 @@ ul {
 
 .recipe-label {
  padding: 10px;
+ margin-bottom: 60px;
 
 }
 
@@ -385,7 +386,7 @@ a.nav-button {
     opacity: 1;
 }
 div.body-border{
-  margin-bottom: 120px;
+  margin-bottom: 190px;
 }
 
 body { 
@@ -590,12 +591,14 @@ p{
 
 #rec-li {
   margin-top: 30px;
+
 }
 
 ul {
   padding-right: 30px;
   list-style: none;
 }
+
 p.recipe-para{
 padding: 20px;
 }
