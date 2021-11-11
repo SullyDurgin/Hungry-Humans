@@ -9,17 +9,21 @@
         </div>
           <h1><%= isSelf ? "This guy" : profile.name %>'s list of Recipes</h1>
           <% if (isSelf) { %>
-            <form action="/profiles/<%= profile._id %>/profiles" method="POST">
+            <form action="/profiles/<%= profile._id %>/profiles" method="POST"></form>
+            
                   <% } %>
                     <% } else { %>
                       <h2>
                         <%= isSelf ? "You don't" : `${profile.name} doesn't` %> have any profiles.
                       </h2>
-                      <% } %></form>
+                      <% } %>
                       
     </main>
 </div>
 </section>
     
+
+
+
 
             <%- include('../partials/footer') %>

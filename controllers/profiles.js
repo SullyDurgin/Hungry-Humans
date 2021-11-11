@@ -5,7 +5,7 @@ function index(req, res) {
 		.then((profiles) => {
 			res.render('profiles/index', {
 				profiles,
-        title: "Profiles"
+				title: 'Profiles',
 			})
 		})
 		.catch((err) => {
@@ -16,7 +16,7 @@ function index(req, res) {
 
 function show(req, res) {
 	Profile.findById(req.params.id)
-	.populate('recipes')
+		.populate('recipes')
 		.then((profile) => {
 			Profile.findById(req.user.profile._id).then((self) => {
 				const isSelf = self._id.equals(profile._id)
@@ -26,12 +26,13 @@ function show(req, res) {
 					self,
 					isSelf,
 				})
-    })
-  })
+			})
+		})
 		.catch((err) => {
 			console.log(err)
 			res.redirect(`/profiles/${req.user.profile._id}`)
 		})
+		console.log(profile.recipes)
 }
 
 function createReview(req, res) {
@@ -62,4 +63,4 @@ function deleteReview(req, res) {
 		})
 }
 
-export { index, show, createReview, deleteReview}
+export { index, show, createReview, deleteReview }

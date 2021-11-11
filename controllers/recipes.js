@@ -24,6 +24,10 @@ function create(req, res) {
 	req.body.owner = req.user.profile._id
 	Recipe.create(req.body)
 		.then((recipe) => {
+			Profile.findById(req.user.profile._id).then((profile) => {
+				profile.recipes.push(recipe._id)
+				profile.save()
+			})
 			res.redirect('/recipes')
 		})
 		.catch((err) => {
@@ -32,26 +36,23 @@ function create(req, res) {
 		})
 }
 
-
 function show(req, res) {
 	Recipe.findById(req.params.id)
 		.populate('owner')
 		.exec(function (err, recipe) {
-			console.log(recipe)
-			console.log(recipe.owner)
-					let total = 0
-					recipe.reviews.forEach(function (review) {
-		 			total += review.rating
-					})
-					let averageReviewScore = (total / recipe.reviews.length).toFixed(1)
-					res.render('recipes/show', {
-					title: `${recipe.name}'s Details`,
-			 			averageReviewScore,
-						recipe,
-			 		})
-				}
-			)
-		}
+			let total = 0
+			recipe.reviews.forEach(function (review) {
+				total += review.rating
+			})
+			let averageReviewScore = (total / recipe.reviews.length).toFixed(1)
+			res.render('recipes/show', {
+				title: `${recipe.name}'s Details`,
+				averageReviewScore,
+				recipe,
+			})
+			
+		})
+}
 
 
 function edit(req, res) {
@@ -72,8 +73,6 @@ function update(req, res) {
 	Recipe.findById(req.params.id)
 		.then((recipe) => {
 			if (recipe.owner.equals(req.user.profile._id)) {
-				// the person that created the recipe is trying to edit the recipe
-				req.body.review = !!req.body.review
 				req.body.ingredients = req.body.ingredients
 					.split(',')
 					.map((ingredient) => ingredient.trim())
@@ -91,34 +90,33 @@ function update(req, res) {
 }
 
 function deleteRecipe(req, res) {
-	Recipe.findById(req.params.id)
-		.then((recipe) => {
-			if (recipe.owner.equals(req.user.profile._id)) {
-				// the person that created the recipe is trying to delete the recipe
-				recipe.delete().then(() => {
-					res.redirect('/recipes')
+	if (recipe.owner.equals(req.user.profile._id)) {
+		Recipe.delete(req.body)
+			.then((recipe) => {
+				Profile.findById(req.user.profile._id).then((profile) => {
+					profile.recipes = profile.recipes.filter((id) => id !== recipe._id)
+					profile.save()
 				})
-			} else {
-				// the person that created the recipe is NOT the person trying to delete the recipe
-				throw new Error('Not Your Recipe to Delete')
-			}
-		})
-		.catch((err) => {
-			console.log(err)
-			res.redirect('/recipes')
-		})
+			})
+			.catch((err) => {
+				console.log(err)
+				res.redirect('/recipes')
+			})
+	} else {
+		throw new Error('Not Your Recipe to Delete')
+		res.redirect('/recipes')
+	}
 }
 
 function createReview(req, res) {
-  	console.log('creating review for', req.params.id)
-		console.log(req.body)
-		Recipe.findById(req.params.id, function (error, recipe) {
-			recipe.reviews.push(req.body)
-			recipe.save(function (error) {
-				res.redirect(`/recipes/${recipe._id}`)
-			})
+	console.log('creating review for', req.params.id)
+	console.log(req.body)
+	Recipe.findById(req.params.id, function (error, recipe) {
+		recipe.reviews.push(req.body)
+		recipe.save(function (error) {
+			res.redirect(`/recipes/${recipe._id}`)
 		})
-		
+	})
 }
 
 function deleteReview(req, res) {
@@ -136,14 +134,26 @@ function deleteReview(req, res) {
 }
 
 function randomRecipe(req, res) {
-	console.log("recipe random")
-  Recipe.count().exec(function (err, count) {
-  let random = Math.floor(Math.random() * count)
-  Recipe.findOne().skip(random).exec(
-    function (err, result) {
-			res.redirect(302, `/recipes/${result._id}`)
-		})
+	console.log('recipe random')
+	Recipe.count().exec(function (err, count) {
+		let random = Math.floor(Math.random() * count)
+		Recipe.findOne()
+			.skip(random)
+			.exec(function (err, result) {
+				res.redirect(302, `/recipes/${result._id}`)
+			})
 	})
 }
 
-export { index, create, show, edit, update, deleteRecipe as delete, createReview, deleteReview, randomRecipe, newRecipe as new}
+export {
+	index,
+	create,
+	show,
+	edit,
+	update,
+	deleteRecipe as delete,
+	createReview,
+	deleteReview,
+	randomRecipe,
+	newRecipe as new,
+}

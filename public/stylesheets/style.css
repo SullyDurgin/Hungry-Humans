@@ -68,6 +68,9 @@ h1 {
 }
 
 #inside{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   margin: 190px;
   background-color: #fffaf0;
   border: double #800020;
@@ -596,9 +599,6 @@ p.recipe-para{
 padding: 20px;
 }
 
-.review-table {
-  text-align: center;
-}
 
 table {
   border-collapse: separate;
