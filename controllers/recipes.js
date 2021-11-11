@@ -93,7 +93,6 @@ function deleteRecipe(req, res) {
 	Recipe.findById(req.params.id)
 		.then((recipe) => {
 			if (recipe.owner.equals(req.user.profile._id)) {
-				// the person that created the recipe is trying to delete the recipe
 				recipe.delete().then(() => {
 					res.redirect('/recipes')
 				})
