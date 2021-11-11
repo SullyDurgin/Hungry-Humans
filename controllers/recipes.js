@@ -22,8 +22,12 @@ function newRecipe(req, res) {
 
 function create(req, res) {
 	req.body.owner = req.user.profile._id
+		req.body.ingredients = req.body.ingredients
+			.split(',')
+			.map((ingredient) => ingredient.trim())
 	Recipe.create(req.body)
 		.then((recipe) => {
+
 			res.redirect('/recipes')
 		})
 		.catch((err) => {
@@ -69,8 +73,6 @@ function update(req, res) {
 	Recipe.findById(req.params.id)
 		.then((recipe) => {
 			if (recipe.owner.equals(req.user.profile._id)) {
-				// the person that created the recipe is trying to edit the recipe
-				req.body.review = !!req.body.review
 				req.body.ingredients = req.body.ingredients
 					.split(',')
 					.map((ingredient) => ingredient.trim())
@@ -96,7 +98,6 @@ function deleteRecipe(req, res) {
 					res.redirect('/recipes')
 				})
 			} else {
-				// the person that created the recipe is NOT the person trying to delete the recipe
 				throw new Error('Not Your Recipe to Delete')
 			}
 		})
