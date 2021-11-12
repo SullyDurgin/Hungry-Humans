@@ -8,6 +8,11 @@ This is an app that allows the user to create, read, update & delete recipes. As
 Visit the app here: https://hungry-humans.herokuapp.com/
 
 Take a look at the planning process: https://trello.com/b/niVp3waK/unit-2-project
+
+### Starting ERD
+![ERD](https://i.ibb.co/db9j222/Screen-Shot-2021-11-12-at-9-50-46-AM.png)
+
+
 ## Desktop Screenshots
 ![Desktop](https://i.ibb.co/NKSpcxN/Screen-Shot-2021-11-12-at-9-19-33-AM.png)
 
