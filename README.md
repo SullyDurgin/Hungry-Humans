@@ -39,3 +39,6 @@ Take a look at the planning process: https://trello.com/b/niVp3waK/unit-2-projec
 - profiles that have access to the recipes that user has created
 - a grocery list based on the recipes that the user picks
 - As a user I want to be able to search for recipes with keywords
+- the instructions in a more readable structure
+- have each user be able to add to their favorites lists that they can name & separate 
+- have recipes broken into meals categories. Dinner, Snacks, Desserts etc.
