@@ -6,7 +6,7 @@
 
 
 body {
-   text-align: center;
+  text-align: center;
   background-color:	#fffaf0;
   border: double #800020;
   font-family: monospace;
@@ -15,8 +15,10 @@ body {
 
 }
 
+
 .mobilescreen {
   padding-bottom: 40px;
+
 }
 
 .body-border { 
@@ -177,6 +179,7 @@ ul {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
+  
   
 }
 

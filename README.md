@@ -26,15 +26,21 @@ Take a look at the planning process: https://trello.com/b/niVp3waK/unit-2-projec
 ![Mobile](https://i.ibb.co/KhkmfWH/Screen-Shot-2021-11-12-at-9-28-12-AM.png)
 ![Mobile](https://i.ibb.co/BgpqKGR/Screen-Shot-2021-11-12-at-9-28-50-AM.png)
 
-## Technologies Used
+## Technologies & Sources Used
 
+-   HTML
+-   EJS
+-   CSS
+-   JavaScript
 -   Node
 -   Express
 -   MongoDB
 -   Mongoose
--   JavaScript
--   EJS
--   CSS
+
+https://www.bigstockphoto.com/
+https://developer.mozilla.org/
+https://imgbb.com/
+https://www.csscodelab.com/
 
 ## Next Steps
 
