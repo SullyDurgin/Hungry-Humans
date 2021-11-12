@@ -43,7 +43,7 @@ Take a look at the planning process: https://trello.com/b/niVp3waK/unit-2-projec
 
 		- https://developer.mozilla.org/
 
-		-	https://imgbb.com/
+		- https://imgbb.com/
 
 		- https://www.csscodelab.com/
 
