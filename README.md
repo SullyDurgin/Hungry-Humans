@@ -14,7 +14,7 @@ Take a look at the planning process: https://trello.com/b/niVp3waK/unit-2-projec
 
 
 ## Desktop Screenshots
-![Desktop](https://i.ibb.co/NKSpcxN/Screen-Shot-2021-11-12-at-9-19-33-AM.png)
+![Desktop](https://i.ibb.co/FXqz3CG/Screen-Shot-2021-11-12-at-1-49-58-PM.png)
 
 ![Desktop](https://i.ibb.co/949N02h/Screen-Shot-2021-11-12-at-9-20-02-AM.png_)
 
