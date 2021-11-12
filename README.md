@@ -57,3 +57,4 @@ Take a look at the planning process: https://trello.com/b/niVp3waK/unit-2-projec
 - the instructions in a more readable structure
 - have each user be able to add to their favorites lists that they can name & separate 
 - have recipes broken into meals categories. Dinner, Snacks, Desserts etc.
+- style the profile cards page
