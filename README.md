@@ -5,7 +5,7 @@ I often have trouble trying to figure out what I want to make for dinner. Lookin
 This is an app that allows the user to create, read, update & delete recipes. As a user you can also look at other people who have signed in and explore their profiles. This app also allows the user to write & read reviews.
 
 ## Getting Started
-Visit the app here: https://hungry-humans.herokuapp.com/]
+Visit the app here: https://hungry-humans.herokuapp.com/
 
 Take a look at the planning process: https://trello.com/b/niVp3waK/unit-2-project
 ## Desktop Screenshots
