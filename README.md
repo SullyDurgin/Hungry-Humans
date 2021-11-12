@@ -41,7 +41,7 @@ Take a look at the planning process: https://trello.com/b/niVp3waK/unit-2-projec
 		
 		- https://www.bigstockphoto.com/
 
-		 - https://developer.mozilla.org/
+		- https://developer.mozilla.org/
 
 		-	https://imgbb.com/
 
