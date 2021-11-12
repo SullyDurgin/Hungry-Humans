@@ -38,7 +38,6 @@ Take a look at the planning process: https://trello.com/b/niVp3waK/unit-2-projec
 -   Mongoose
 
 		Resources:  
-		
 		- https://www.bigstockphoto.com/
 
 		- https://developer.mozilla.org/
